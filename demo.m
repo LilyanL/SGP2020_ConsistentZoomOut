@@ -1,8 +1,10 @@
 clear; close all; clc; 
 addpath(genpath(pwd)); 
+dbstop if error
 
 %% load shapes
-mesh_dir = './data/shapes/'; 
+%mesh_dir = './data/shapes/'; 
+mesh_dir = [pwd '/'];
 
 mesh_info = dir([mesh_dir, '*.off']);
 nshapes = length(mesh_info);
@@ -21,7 +23,9 @@ for i = 1:nshapes
 end    
 
 %% load initial maps
-map_dir = './data/bim_maps/'; 
+%map_dir = './data/bim_maps/'; 
+map_dir = [pwd '/'];
+
 ini_maps = cell(nshapes);
 for i = 1:nshapes
     for j = 1:nshapes
