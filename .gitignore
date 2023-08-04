@@ -1,0 +1,9 @@
+
+*.asv
+data/__MACOSX/bim_maps/
+
+data/__MACOSX/shapes/
+
+data/bim_maps/
+
+data/shapes/
