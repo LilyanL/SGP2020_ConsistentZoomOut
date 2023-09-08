@@ -49,15 +49,9 @@ Data.sub = subsamples;
 Data.alpha = 0.9; 
 Data.dim = 30:2:80; % zoomout from dim 30 to 80, with step size 2.
 
+%Run consistent zoomOut
 Data = ConsistentZoomOut(Data);
 
 %% visualize results
-figure; 
-for i = 1:nshapes
-    for j = 1:i-1
-        visualize_map(shapes{i}, shapes{j}, Data.input_maps{i, j}, Data.refined_maps{i, j}); 
-        pause; 
-    end
-end
-
-
+curFig = figure(); 
+visualize_map_collection(Data, curFig);
