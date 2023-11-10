@@ -4,11 +4,11 @@ dbstop if error
 %% load shapes
 mesh_dir = uigetdir(pwd, 'Select input folder');
 
-mesh_info = dir([mesh_dir, '*.off']);
+mesh_info = dir([mesh_dir, '\*.off']);
 nshapes = length(mesh_info);
 shapes = cell(nshapes, 1);
 for i = 1:nshapes
-    shapes{i} = read_off_shape([mesh_dir, mesh_info(i).name]);
+    shapes{i} = read_off_shape([mesh_dir, '\', mesh_info(i).name]);
     shapes{i}.name = mesh_info(i).name(1:end-4); 
     shapes{i} = compute_laplacian_basis(shapes{i}, 100); 
 end

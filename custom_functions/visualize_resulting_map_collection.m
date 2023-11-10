@@ -17,7 +17,7 @@ for i = 1:length(Data.shapes)
     for j = 1:i-1
 
         
-        if(~isempty(Data.refined_maps)&&boolPlotRefined)
+        if(boolPlotRefined && ~isempty(Data.refined_maps))
        
             visualize_refined_map(Data.shapes{i}, Data.shapes{j}, Data.input_maps{i, j}, Data.refined_maps{i, j});
 
